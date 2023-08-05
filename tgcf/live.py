@@ -23,9 +23,9 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
     if chat_id not in config.from_to:
         return
-        
-    logging.info(f"New message receivedzzzzz in {chat_id}")
-    logging.info(f"TEST")
+
+    logging.info(f"New message received in {chat_id}")
+    logging.info(f"TEST 2")
 
     message = event.message
 
@@ -42,6 +42,9 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
     dest = config.from_to.get(chat_id)
 
     tm = await apply_plugins(message)
+
+    logging.info(f"TM -> {tm}")
+
     if not tm:
         return
 

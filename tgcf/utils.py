@@ -39,7 +39,12 @@ async def send_message(recipient: EntityLike, tm: "TgcfMessage") -> Message:
             recipient, tm.new_file, caption=tm.text, reply_to=tm.reply_to
         )
         return message
+
     tm.message.text = tm.text
+    tm.reply_to.top_msg_id = 12
+
+    logging.info(f"TM -->> {tm}")
+
     return await client.send_message(recipient, tm.message, reply_to=tm.reply_to)
 
 
