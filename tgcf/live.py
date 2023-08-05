@@ -44,7 +44,6 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
 
     logging.info(f"TM.reply_to in live -> {tm.reply_to}")
-    logging.info(f"Dest in live -> {dest.stringify()}")
 
     if not tm:
         return
@@ -59,7 +58,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
             tm.reply_to = st.stored.get(r_event_uid).get(d)
         fwded_msg = await send_message(d, tm)
         st.stored[event_uid].update({d: fwded_msg})
-        logging.info(f"Destination: {d.stringify()}")
+        logging.info(f"Destination: {d}")
     tm.clear()
 
 
