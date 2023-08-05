@@ -25,7 +25,6 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
         return
 
     logging.info(f"New message received in {chat_id}")
-    logging.info(f"TEST 2")
 
     message = event.message
 
@@ -43,7 +42,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
     tm = await apply_plugins(message)
 
-    logging.info(f"TM -> {tm}")
+    logging.info(f"TM -> {tm.reply_to}")
 
     if not tm:
         return
