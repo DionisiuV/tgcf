@@ -192,7 +192,7 @@ async def load_from_to(
     for forward in forwards:
         if '/' in forward.dest[1]:
             ds = forward.dest[1].split('/')
-            forward.dest[1] = ds[0]
+            forward.dest[1] = int(ds[0])
             forward.reply_to = ds[1]
 
         logging.info(f"Forward.dest: {forward.dest}")
