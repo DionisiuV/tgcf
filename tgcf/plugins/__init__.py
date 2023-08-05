@@ -29,6 +29,7 @@ class TgcfMessage:
         self.new_file = None
         self.cleanup = False
         self.reply_to = None
+        self.reply_to.top_msg_id = None
 
     async def get_file(self) -> str:
         """Downloads the file in the message and returns the path where its saved."""
