@@ -170,7 +170,7 @@ async def get_id(client: TelegramClient, peer):
 
 async def load_from_to(
     client: TelegramClient, forwards: List[Forward]
-) -> Dict[int, List[Destination]]:
+) -> Dict[int, List[int]]:
     """Convert a list of Forward objects to a mapping.
 
     Args:
