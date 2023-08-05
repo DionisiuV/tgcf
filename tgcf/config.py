@@ -20,9 +20,9 @@ env_file = os.path.join(pwd, ".env")
 
 load_dotenv(env_file)
 
-class DictParameter(BaseModel):
-    dest: int
-    top: int
+class Destination(BaseModel):
+    dest: List[Union[int, str]] = []
+    reply_to: int = 0
 
 class Forward(BaseModel):
     """Blueprint for the forward object."""
@@ -31,18 +31,10 @@ class Forward(BaseModel):
     con_name: str = ""
     use_this: bool = True
     source: Union[int, str] = ""
-    dest: List[DictParameter] = []
+    dest: List[Destination] = []
     reply_to: int = 0
     offset: int = 0
     end: Optional[int] = 0
-
-class Destination(BaseModel):
-    """Blueprint for the destination object."""
-
-    # pylint: disable=too-few-public-methods
-    dest: List[Union[int, str]] = []
-    reply_to: int = 0
-
 
 
 class LiveSettings(BaseModel):
@@ -178,7 +170,7 @@ async def get_id(client: TelegramClient, peer):
 
 async def load_from_to(
     client: TelegramClient, forwards: List[Forward]
-) -> Dict[int, List[DictParameter]]:
+) -> Dict[int, List[Destination]]:
     """Convert a list of Forward objects to a mapping.
 
     Args:
@@ -201,6 +193,7 @@ async def load_from_to(
         return await get_id(client, peer)
 
     for forward in forwards:
+        logging.info(f"Forward")
         if '/' in forward.dest[1]:
             ds = forward.dest[1].split('/')
             forward.dest[1] = int(ds[0])
