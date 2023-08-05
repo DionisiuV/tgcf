@@ -20,7 +20,7 @@ env_file = os.path.join(pwd, ".env")
 
 load_dotenv(env_file)
 
-class Destination:
+class Destination(BaseModel):
     """Blueprint for the destination object."""
 
     # pylint: disable=too-few-public-methods
