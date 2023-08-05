@@ -57,6 +57,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
     st.stored[event_uid] = {}
     for d in dest:
         logging.info(f"Config.from_to inside dest loop: {d}")
+        logging.info(f"Config.from_to.reply_to inside dest loop: {d.reply_to}")
         if event.is_reply and r_event_uid in st.stored:
             tm.reply_to = st.stored.get(r_event_uid).get(d)
 

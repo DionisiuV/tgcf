@@ -29,7 +29,7 @@ class Forward(BaseModel):
     use_this: bool = True
     source: Union[int, str] = ""
     dest: List[Union[int, str]] = []
-    reply_to: int = 0
+    dest.reply_to: int = 0
     offset: int = 0
     end: Optional[int] = 0
 
@@ -193,10 +193,10 @@ async def load_from_to(
         if '/' in forward.dest[1]:
             ds = forward.dest[1].split('/')
             forward.dest[1] = int(ds[0])
-            forward.reply_to = ds[1]
+            forward.dest.reply_to = ds[1]
 
         logging.info(f"Forward.dest: {forward.dest}")
-        logging.info(f"Forward.reply_to: {forward.reply_to}")
+        logging.info(f"Forward.reply_to: {forward.dest.reply_to}")
 
         if not forward.use_this:
             continue
