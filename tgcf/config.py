@@ -189,7 +189,7 @@ async def load_from_to(
         return await get_id(client, peer)
 
     for forward in forwards:
-        logging.info(f"Forward: {forward.stringify()}")
+        logging.info(f"Forward: {str(forward)}")
         if not forward.use_this:
             continue
         source = forward.source
