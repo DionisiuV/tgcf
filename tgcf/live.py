@@ -42,7 +42,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
     tm = await apply_plugins(message)
 
-    logging.info(f"TM -> {tm.reply_to}")
+    logging.info(f"TM.reply_to in live -> {tm.reply_to}")
 
     if not tm:
         return
