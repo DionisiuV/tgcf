@@ -20,6 +20,12 @@ env_file = os.path.join(pwd, ".env")
 
 load_dotenv(env_file)
 
+class Destination:
+    """Blueprint for the destination object."""
+
+    # pylint: disable=too-few-public-methods
+    dest: List[Union[int, str]] = []
+    reply_to: int = 0
 
 class Forward(BaseModel):
     """Blueprint for the forward object."""
@@ -32,14 +38,6 @@ class Forward(BaseModel):
     reply_to: int = 0
     offset: int = 0
     end: Optional[int] = 0
-
-class Destination(BaseModel):
-    """Blueprint for the destination object."""
-
-    # pylint: disable=too-few-public-methods
-    dest: List[Union[int, str]] = []
-    reply_to: int = 0
-
 
 
 class LiveSettings(BaseModel):
