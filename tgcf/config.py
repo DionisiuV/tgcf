@@ -28,10 +28,18 @@ class Forward(BaseModel):
     con_name: str = ""
     use_this: bool = True
     source: Union[int, str] = ""
-    dest: List[Union[int, str]] = []
-    dest.reply_to: int = 0
+    dest: List[Destination] = []
+    reply_to: int = 0
     offset: int = 0
     end: Optional[int] = 0
+
+class Destination(BaseModel):
+    """Blueprint for the destination object."""
+
+    # pylint: disable=too-few-public-methods
+    dest: List[Union[int, str]] = []
+    reply_to: int = 0
+
 
 
 class LiveSettings(BaseModel):
@@ -190,9 +198,9 @@ async def load_from_to(
         return await get_id(client, peer)
 
     for forward in forwards:
-        if '/' in forward.dest[1]:
-            ds = forward.dest[1].split('/')
-            forward.dest[1] = int(ds[0])
+        if '/' in forward.dest.dest[1]:
+            ds = forward.dest.dest[1].split('/')
+            forward.dest.dest[1] = int(ds[0])
             forward.dest.reply_to = ds[1]
 
         logging.info(f"Forward.dest: {forward.dest}")
