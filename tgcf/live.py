@@ -57,7 +57,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
         if event.is_reply and r_event_uid in st.stored:
             tm.reply_to = st.stored.get(r_event_uid).get(d)
         
-        if '/' in d
+        if '/' in d:
             ds = d.split('/')
             logging.info(f"Dest splitted: {ds[0]} - {ds[1]}")
 
