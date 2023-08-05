@@ -56,6 +56,11 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
     for d in dest:
         if event.is_reply and r_event_uid in st.stored:
             tm.reply_to = st.stored.get(r_event_uid).get(d)
+        
+        if '/' in d
+            ds = d.split('/')
+            logging.info(f"Dest splitted: {ds[0]} - {ds[1]}")
+
         fwded_msg = await send_message(d, tm)
         st.stored[event_uid].update({d: fwded_msg})
         logging.info(f"Destination: {d}")
