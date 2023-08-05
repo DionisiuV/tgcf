@@ -20,6 +20,9 @@ env_file = os.path.join(pwd, ".env")
 
 load_dotenv(env_file)
 
+class DictParameter(BaseModel):
+    dest: int
+    top: int
 
 class Forward(BaseModel):
     """Blueprint for the forward object."""
@@ -28,7 +31,7 @@ class Forward(BaseModel):
     con_name: str = ""
     use_this: bool = True
     source: Union[int, str] = ""
-    dest: List[Dict[test: int, test2: int]] = []
+    dest: List[DictParameter] = []
     reply_to: int = 0
     offset: int = 0
     end: Optional[int] = 0
