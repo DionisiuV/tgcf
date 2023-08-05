@@ -28,7 +28,7 @@ class Forward(BaseModel):
     con_name: str = ""
     use_this: bool = True
     source: Union[int, str] = ""
-    dest: List[Dict[int, int]] = []
+    dest: List[Dict[test: int, test2: int]] = []
     reply_to: int = 0
     offset: int = 0
     end: Optional[int] = 0
