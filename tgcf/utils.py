@@ -42,12 +42,8 @@ async def send_message(recipient: EntityLike, tm: "TgcfMessage") -> Message:
 
     tm.message.text = tm.text
 
-    result = await client.forward_messages(
-        from_peer='-1001628126888',
-        id=[23],
-        to_peer='-1001932245430',
-        top_msg_id=11,
-    )
+    result = await client.forward_messages(recipient, tm.message)
+
 
     logging.info(result.stringify())
 
