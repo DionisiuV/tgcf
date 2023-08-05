@@ -20,10 +20,12 @@ env_file = os.path.join(pwd, ".env")
 
 load_dotenv(env_file)
 
-class Destination:
+class Destination(BaseModel):
+   # pylint: disable=too-few-public-methods
     def __init__(self, dest, reply_to):
         self.dest = dest
         self.reply_to = reply_to
+        
 
 class Forward(BaseModel):
     """Blueprint for the forward object."""
