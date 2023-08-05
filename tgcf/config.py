@@ -208,7 +208,7 @@ async def load_from_to(
         if not isinstance(source, int) and source.strip() == "":
             continue
 
-        destination: Destination = {}
+        destination: Destination = Destination()
         destination.dest = forward.dest
         destination.reply_to = forward.reply_to
 
