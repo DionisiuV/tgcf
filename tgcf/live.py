@@ -40,6 +40,8 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
     dest = config.from_to.get(chat_id)
 
+    logging.info(f"Config.from_to dest: {dest}")
+
     tm = await apply_plugins(message)
 
 
@@ -54,16 +56,13 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
     st.stored[event_uid] = {}
     for d in dest:
+        logging.info(f"Config.from_to inside dest loop: {d}")
         if event.is_reply and r_event_uid in st.stored:
             tm.reply_to = st.stored.get(r_event_uid).get(d)
-        
-        if '/' in d:
-            ds = d.split('/')
-            logging.info(f"Dest splitted: {ds[0]} - {ds[1]}")
 
         fwded_msg = await send_message(d, tm)
         st.stored[event_uid].update({d: fwded_msg})
-        logging.info(f"Destination: {d}")
+
     tm.clear()
 
 
