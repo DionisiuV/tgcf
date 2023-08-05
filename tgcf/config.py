@@ -207,8 +207,16 @@ async def load_from_to(
         source = forward.source
         if not isinstance(source, int) and source.strip() == "":
             continue
+
+        destination: Destination = {}
+        destination.dest = forward.dest
+        destination.reply_to = forward.reply_to
+
+        logging.info(f"Destination object: {destination}")
+
         src = await _(forward.source)
-        from_to_dict[src] = [await _(dest) for dest in forward.dest]
+        from_to_dict[src] = destination
+
     logging.info(f"From to dict is {from_to_dict}")
     return from_to_dict
 
