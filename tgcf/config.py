@@ -194,7 +194,8 @@ async def load_from_to(
 
     for forward in forwards:
         logging.info(f"Forward")
-        
+        from_to_dict[forward.source] = []
+
         for i, dest in enumerate(forward.dest):
             destination: Destination = Destination()
             destination.dest = dest
