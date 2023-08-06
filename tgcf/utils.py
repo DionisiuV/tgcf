@@ -47,7 +47,7 @@ async def send_message(recipient: EntityLike, tm: "TgcfMessage") -> Message:
 
     if(recipient.reply_to != 0):
         return await client.send_message(recipient.dest, tm.message, reply_to=recipient.reply_to)
-    else
+    else:
         return await client.send_message(recipient.dest, tm.message)
 
 
