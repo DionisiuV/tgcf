@@ -1,1 +1,1 @@
-web: sh setup.sh && tgf-web
+web: sh setup.sh && tgcf-web
