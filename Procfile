@@ -1,2 +1,1 @@
-web: tgcf-web
-worker: tgcf-web
+web: sh setup.sh && tgf-web
