@@ -21,7 +21,7 @@ env_file = os.path.join(pwd, ".env")
 load_dotenv(env_file)
 
 class Destination(BaseModel):
-    dest: List[Union[int, str]] = []
+    dest: Union[int, str] = []
     reply_to: int = 0
 
 class Forward(BaseModel):
@@ -194,10 +194,16 @@ async def load_from_to(
 
     for forward in forwards:
         logging.info(f"Forward")
-        if '/' in forward.dest[1]:
-            ds = forward.dest[1].split('/')
-            forward.dest[1] = int(ds[0])
-            forward.reply_to = ds[1]
+        destination: Destination = Destination()
+        
+        for i, dest in enumerate(forward.dest):
+            destination.dest = dest
+            logging.info(f"Dest: {dest}")
+            if '/' in dest:
+                ds = dest.split('/')
+                forward.dest[i] = ds[0]
+                destination.reply_to = ds[1]
+                logging.info(f"Reply_to: {ds[1]}")
 
         logging.info(f"Forward.dest: {forward.dest}")
         logging.info(f"Forward.reply_to: {forward.reply_to}")
@@ -207,10 +213,6 @@ async def load_from_to(
         source = forward.source
         if not isinstance(source, int) and source.strip() == "":
             continue
-
-        destination: Destination = Destination()
-        destination.dest = forward.dest
-        destination.reply_to = forward.reply_to
 
         logging.info(f"Destination object: {destination}")
 
