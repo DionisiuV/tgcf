@@ -198,14 +198,14 @@ async def load_from_to(
 
         for i, dest in enumerate(forward.dest):
             destination: Destination = Destination()
-            destination.dest = dest
             logging.info(f"Dest: {dest}")
             if(isinstance(dest, str)):
                 if '/' in dest:
                     ds = dest.split('/')
-                    forward.dest[i] = ds[0]
+                    forward.dest[i] = int(ds[0])
                     destination.reply_to = ds[1]
                     logging.info(f"Reply_to: {ds[1]}")
+            destination.dest = forward.dest[i]
             
             from_to_dict[forward.source].append(destination)
 
