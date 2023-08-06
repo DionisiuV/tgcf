@@ -42,10 +42,13 @@ async def send_message(recipient: EntityLike, tm: "TgcfMessage") -> Message:
 
     tm.message.text = tm.text
 
-    logging.info(f"TM.reply_to in utils: {tm.reply_to}")
+    logging.info(f"TM.reply_to in utils: {recipient.reply_to}")
     logging.info(f"Recipient: {recipient}")
 
-    return await client.send_message(recipient, tm.message, reply_to=tm.reply_to)
+    if(recipient.reply_to != 0):
+        return await client.send_message(recipient.dest, tm.message, reply_to=recipient.reply_to)
+    else
+        return await client.send_message(recipient.dest, tm.message)
 
 
 def cleanup(*files: str) -> None:

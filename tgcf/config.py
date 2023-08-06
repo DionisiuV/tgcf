@@ -203,7 +203,7 @@ async def load_from_to(
                 if '/' in dest:
                     ds = dest.split('/')
                     forward.dest[i] = int(ds[0])
-                    destination.reply_to = ds[1]
+                    destination.reply_to = int(ds[1])
                     logging.info(f"Reply_to: {ds[1]}")
             destination.dest = forward.dest[i]
             
