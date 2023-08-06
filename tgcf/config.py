@@ -199,7 +199,7 @@ async def load_from_to(
         for i, dest in enumerate(forward.dest):
             destination.dest = dest
             logging.info(f"Dest: {dest}")
-            if(isinstance(dest, str))
+            if(isinstance(dest, str)):
                 if '/' in dest:
                     ds = dest.split('/')
                     forward.dest[i] = ds[0]
