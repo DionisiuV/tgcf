@@ -193,9 +193,7 @@ async def load_from_to(
         return await get_id(client, peer)
 
     for forward in forwards:
-        src = await _(forward.source)
         logging.info(f"Forward")
-        
         
         for i, dest in enumerate(forward.dest):
             destination: Destination = Destination()
@@ -208,7 +206,7 @@ async def load_from_to(
                     destination.reply_to = ds[1]
                     logging.info(f"Reply_to: {ds[1]}")
             
-            from_to_dict[src].append(destination)
+            from_to_dict[forward.source].append(destination)
 
         logging.info(f"Forward.dest: {forward.dest}")
         logging.info(f"Forward.reply_to: {forward.reply_to}")
