@@ -62,7 +62,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
             tm.reply_to = st.stored.get(r_event_uid).get(d)
 
         fwded_msg = await send_message(d, tm)
-        st.stored[event_uid].update({d: fwded_msg})
+        st.stored[event_uid].update({d.dest: fwded_msg})
 
     tm.clear()
 
