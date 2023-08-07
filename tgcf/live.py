@@ -24,8 +24,6 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
     if chat_id not in config.from_to:
         return
 
-    logging.info(f"New message received in {chat_id}")
-
     message = event.message
 
     event_uid = st.EventUid(event)
@@ -39,13 +37,7 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
             break
 
     dest = config.from_to.get(chat_id)
-
-    logging.info(f"Config.from_to dest: {dest}")
-
     tm = await apply_plugins(message)
-
-
-    logging.info(f"TM.reply_to in live -> {tm.reply_to}")
 
     if not tm:
         return
@@ -56,10 +48,8 @@ async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
 
     st.stored[event_uid] = {}
     for d in dest:
-        logging.info(f"Config.from_to inside dest loop: {d}")
-        logging.info(f"Config.from_to.reply_to inside dest loop: {d.reply_to}")
         if event.is_reply and r_event_uid in st.stored:
-            tm.reply_to = st.stored.get(r_event_uid).get(d)
+            tm.reply_to = st.stored.get(r_event_uid).get(d.dest)
 
         fwded_msg = await send_message(d, tm)
         st.stored[event_uid].update({d.dest: fwded_msg})
@@ -121,8 +111,8 @@ async def deleted_message_handler(event):
 
 ALL_EVENTS = {
     "new": (new_message_handler, events.NewMessage()),
-    "edited": (edited_message_handler, events.MessageEdited()),
-    "deleted": (deleted_message_handler, events.MessageDeleted()),
+    # "edited": (edited_message_handler, events.MessageEdited()),
+    # "deleted": (deleted_message_handler, events.MessageDeleted()),
 }
 
 
