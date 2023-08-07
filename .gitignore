@@ -13,6 +13,7 @@ test.py
 todo
 *.ipynb
 .tgcf
+logs.txt
 
 
 # Byte-compiled / optimized / DLL files
@@ -153,3 +154,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+old_logs.txt
+.gitignore
+logs_n_lines.txt
+logs.txt
+.gitignore
+logs.txt
+logs.txt
