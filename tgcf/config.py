@@ -193,32 +193,24 @@ async def load_from_to(
         return await get_id(client, peer)
 
     for forward in forwards:
-        logging.info(f"Forward")
         from_to_dict[forward.source] = []
 
         for i, dest in enumerate(forward.dest):
             destination: Destination = Destination()
-            logging.info(f"Dest: {dest}")
             if(isinstance(dest, str)):
                 if '/' in dest:
                     ds = dest.split('/')
                     forward.dest[i] = int(ds[0])
                     destination.reply_to = int(ds[1])
-                    logging.info(f"Reply_to: {ds[1]}")
             destination.dest = forward.dest[i]
             
             from_to_dict[forward.source].append(destination)
-
-        logging.info(f"Forward.dest: {forward.dest}")
-        logging.info(f"Forward.reply_to: {forward.reply_to}")
 
         if not forward.use_this:
             continue
         source = forward.source
         if not isinstance(source, int) and source.strip() == "":
             continue
-
-        logging.info(f"Destination object: {destination}")
 
     logging.info(f"From to dict is {from_to_dict}")
     return from_to_dict
