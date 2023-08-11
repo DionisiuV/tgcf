@@ -1,1 +1,213 @@
-{"pid":89,"login":{"API_ID":22409484,"API_HASH":"680ebb033110e8d97f8aa42c3d6d9c92","user_type":1,"phone_no":91,"USERNAME":"","SESSION_STRING":"1BJWap1sBuxH-cBSqi-_pKVZjGT78UO-o-3soFTJUJe9V2l64TlmIo06qTgSZal7wIzqbiGOQ-HcGjWgCjUaGDzSpRiVAwTsqYGn5nDClfDqs0Ek1PdV8vZDgoLeuHVK4cmdqL44CWyLb1Sh6inlr6y6T-B1Jo5qENXRraeMYZ2-tTB8RORZ_3cAPkrbPOIshGhl6Y6ykaUJgd7QT4IwITYJx74_LELrGHL36Py1KaoM-s55prTnGdzb0YexccPWp42VbkPFtrQpds3FX1V2H8_c2PYHRyVehxW9TNpmIFb5oIq64rV08CPHyxgAj6wXozrzZgtKhZyo86r1AzNd-XVy1Psfzvj4=","BOT_TOKEN":""},"admins":[],"forwards":[{"con_name":"Metabear","use_this":true,"source":-1001225381314,"dest":["-1001932245430/2",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"VIP LIFETIME PAID SIGNALS","use_this":true,"source":-1001894756692,"dest":["-1001932245430/10",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"GOLD FX (VIP)","use_this":true,"source":-1001684058538,"dest":["-1001932245430/9",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"FOREX SIGNALS XAUUSD VIP","use_this":true,"source":-1001174440140,"dest":["-1001932245430/8",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"SMP Paid Signals","use_this":true,"source":-1001534771874,"dest":["-1001932245430/4",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"PRO FOREX PIPS VIP GROUP","use_this":true,"source":-1001353376062,"dest":["-1001932245430/7",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"GFR VIP (Lifetime)","use_this":true,"source":-1001243079353,"dest":["-1001932245430/11",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"LimitlessFX","use_this":true,"source":-1001575816035,"dest":["-1001932245430/92",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"PBFX","use_this":true,"source":-1001862324651,"dest":["-1001932245430/95",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"Supply & Demand Sniper","use_this":true,"source":-1001947803608,"dest":["-1001932245430/96",-1001760549411],"reply_to":0,"offset":0,"end":0},{"con_name":"Testing source channel COs","use_this":true,"source":-1001628126888,"dest":[-1001760549411],"reply_to":0,"offset":0,"end":0}],"show_forwarded_from":false,"mode":0,"live":{"sequential_updates":false,"delete_sync":false,"delete_on_edit":".deleteMe"},"past":{"delay":0},"plugins":{"filter":{"check":false,"users":{"blacklist":[],"whitelist":[]},"files":{"blacklist":[],"whitelist":[]},"text":{"blacklist":[],"whitelist":[],"case_sensitive":false,"regex":false}},"fmt":{"check":false,"style":"preserve"},"mark":{"check":false,"image":"image.png","position":"centre","frame_rate":15},"ocr":{"check":false},"replace":{"check":false,"text":{},"text_raw":"","regex":false},"caption":{"check":false,"header":"","footer":""}},"bot_messages":{"start":"Hi! I am alive","bot_help":"For details visit github.com/aahnik/tgcf"}}
+{
+    "pid": 68,
+    "login": {
+       "API_ID": 22409484,
+       "API_HASH": "680ebb033110e8d97f8aa42c3d6d9c92",
+       "user_type": 1,
+       "phone_no": 91,
+       "USERNAME": "",
+       "SESSION_STRING": "1BJWap1sBuxH-cBSqi-_pKVZjGT78UO-o-3soFTJUJe9V2l64TlmIo06qTgSZal7wIzqbiGOQ-HcGjWgCjUaGDzSpRiVAwTsqYGn5nDClfDqs0Ek1PdV8vZDgoLeuHVK4cmdqL44CWyLb1Sh6inlr6y6T-B1Jo5qENXRraeMYZ2-tTB8RORZ_3cAPkrbPOIshGhl6Y6ykaUJgd7QT4IwITYJx74_LELrGHL36Py1KaoM-s55prTnGdzb0YexccPWp42VbkPFtrQpds3FX1V2H8_c2PYHRyVehxW9TNpmIFb5oIq64rV08CPHyxgAj6wXozrzZgtKhZyo86r1AzNd-XVy1Psfzvj4=",
+       "BOT_TOKEN": ""
+    },
+    "admins": [],
+    "forwards": [
+       {
+          "con_name": "Metabear",
+          "use_this": true,
+          "source": -1001225381314,
+          "dest": [
+             "-1001932245430/2",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "VIP LIFETIME PAID SIGNALS",
+          "use_this": false,
+          "source": -1001894756692,
+          "dest": [
+             "-1001932245430/10",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "GOLD FX (VIP)",
+          "use_this": true,
+          "source": -1001684058538,
+          "dest": [
+             "-1001932245430/9",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "FOREX SIGNALS XAUUSD VIP",
+          "use_this": true,
+          "source": -1001174440140,
+          "dest": [
+             "-1001932245430/8",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "SMP Paid Signals",
+          "use_this": true,
+          "source": -1001534771874,
+          "dest": [
+             "-1001932245430/4",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "PRO FOREX PIPS VIP GROUP",
+          "use_this": true,
+          "source": -1001353376062,
+          "dest": [
+             "-1001932245430/7",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "GFR VIP (Lifetime)",
+          "use_this": true,
+          "source": -1001243079353,
+          "dest": [
+             "-1001932245430/11",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "LimitlessFX",
+          "use_this": true,
+          "source": -1001575816035,
+          "dest": [
+             "-1001932245430/92",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "PBFX",
+          "use_this": true,
+          "source": -1001862324651,
+          "dest": [
+             "-1001932245430/95",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       },
+       {
+          "con_name": "Supply & Demand Sniper",
+          "use_this": true,
+          "source": -1001947803608,
+          "dest": [
+             "-1001932245430/96",
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       }, {
+        "con_name": "Supply & Demand Sniper",
+        "use_this": true,
+        "source": -1001877331113,
+        "dest": [
+           "-1001932245430/411",
+           -1001760549411
+        ],
+        "reply_to": 0,
+        "offset": 0,
+        "end": 0
+     },  {
+          "con_name": "Testing source channel COs",
+          "use_this": true,
+          "source": -1001628126888,
+          "dest": [
+             -1001760549411
+          ],
+          "reply_to": 0,
+          "offset": 0,
+          "end": 0
+       }
+    ],
+    "show_forwarded_from": false,
+    "mode": 0,
+    "live": {
+       "sequential_updates": false,
+       "delete_sync": false,
+       "delete_on_edit": ".deleteMe"
+    },
+    "past": {
+       "delay": 0
+    },
+    "plugins": {
+       "filter": {
+          "check": false,
+          "users": {
+             "blacklist": [],
+             "whitelist": []
+          },
+          "files": {
+             "blacklist": [],
+             "whitelist": []
+          },
+          "text": {
+             "blacklist": [],
+             "whitelist": [],
+             "case_sensitive": false,
+             "regex": false
+          }
+       },
+       "fmt": {
+          "check": false,
+          "style": "preserve"
+       },
+       "mark": {
+          "check": false,
+          "image": "image.png",
+          "position": "centre",
+          "frame_rate": 15
+       },
+       "ocr": {
+          "check": false
+       },
+       "replace": {
+          "check": false,
+          "text": {},
+          "text_raw": "",
+          "regex": false
+       },
+       "caption": {
+          "check": false,
+          "header": "",
+          "footer": ""
+       }
+    },
+    "bot_messages": {
+       "start": "Hi! I am alive",
+       "bot_help": "For details visit github.com/aahnik/tgcf"
+    }
+ }
