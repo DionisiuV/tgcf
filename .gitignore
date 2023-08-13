@@ -13,7 +13,6 @@ test.py
 todo
 *.ipynb
 .tgcf
-logs.txt
 
 
 # Byte-compiled / optimized / DLL files
@@ -156,8 +155,6 @@ dmypy.json
 cython_debug/
 old_logs.txt
 .gitignore
-logs_n_lines.txt
-logs.txt
 .gitignore
 logs.txt
 logs.txt
