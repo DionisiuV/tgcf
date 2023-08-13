@@ -1,1 +1,1 @@
-web: tgcf live
+worker: tgcf live
