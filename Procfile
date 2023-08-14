@@ -1,1 +1,1 @@
-worker: tgcf live
+web: sh setup.sh && tgcf-web
